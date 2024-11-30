@@ -1,11 +1,10 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { RemoveFromFavourites } from "./AddToFavourites"; // RemoveFromFavourites'ı buraya dahil ediyoruz
+import { RemoveFromFavourites } from "./FavouriteContext";
 
 const MyFavourites = () => {
   const [favourites, setFavourites] = useState([]);
 
-  // Favoriler localStorage'dan alınıyor
   useEffect(() => {
     const storedFavourites =
       JSON.parse(localStorage.getItem("favourites")) || [];

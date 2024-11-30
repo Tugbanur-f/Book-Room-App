@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import useFetch from "../Hooks/useFetch";
 import { API_KEY } from "../config";
 import AddToCart from "./AddToCart";
-import AddToFavourites from "./AddToFavourites";
+import { AddToFavourites } from "./FavouriteContext";
 
 const BookSearch = () => {
   const [searchTerm, setSearchTerm] = useState("");
