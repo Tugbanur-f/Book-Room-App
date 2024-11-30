@@ -5,6 +5,7 @@ import MyCart from "./Components/MyCart";
 import "./App.css";
 import Navbar from "./Components/Navbar";
 import MyFavourites from "./Components/FavouritesPage";
+import CategoryPage from "./Components/CategoryPage";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/book/:id" element={<BookDetails />} />
+        <Route path="/categories/:categoryName" element={<CategoryPage />} />
         <Route path="/favourites" element={<MyFavourites />} />
         <Route path="/my-cart" element={<MyCart />} />
       </Routes>

@@ -136,12 +136,12 @@ button:hover {
 }
 
 .book-search input {
-  padding: 10px;
+  padding: 15px;
   font-size: 18px;
   border: 2px solid #390eb0;
   border-radius: 5px;
   margin-right: 10px;
-  width: 300px;
+  width: 350px;
 }
 
 .book-search button {
@@ -159,6 +159,48 @@ button:hover {
   background-color: #45a049;
 }
 
+.categories-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 20px;
+  padding-top: 5px;
+  margin: 0;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.categories-button:hover {
+  color: #0056b3;
+}
+
+.dropdown-button:hover {
+  background-color: #0056b3;
+}
+
+.dropdown-menu {
+  margin-bottom: 20px;
+  color: white;
+  padding: 10px;
+  position: absolute;
+}
+
+.dropdown-item {
+  display: block;
+  padding: 8px 12px;
+  border: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+}
+
+.dropdown-item.active {
+  background-color: #007bff;
+  color: white;
+}
+
 .my-favourites img {
   max-width: 100%;
   height: auto;
@@ -168,14 +210,15 @@ button:hover {
 
 .my-favourites p {
   font-size: 3rem;
+  padding: 10px;
   color: #333;
   font-weight: bold;
   margin-top: 10px;
 }
 
-.my-cart p,
-h3 {
-  font-size: 2rem;
+.my-cart p {
+  font-size: 3rem;
+  padding: 10px;
   color: #333;
   font-weight: bold;
   margin-top: 10px;

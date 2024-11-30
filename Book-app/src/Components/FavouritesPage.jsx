@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { RemoveFromFavourites } from "./FavouriteContext";
 
 const MyFavourites = () => {
+  const navigate = useNavigate();
   const [favourites, setFavourites] = useState([]);
 
   useEffect(() => {
@@ -13,6 +14,8 @@ const MyFavourites = () => {
 
   return (
     <div className="my-favourites">
+      <button onClick={() => navigate(-1)}>Go Back</button>
+
       {favourites.length === 0 ? (
         <p>Your favourite is empty.</p>
       ) : (
@@ -34,9 +37,6 @@ const MyFavourites = () => {
           ))}
         </div>
       )}
-      <Link to="/" className="back-button">
-        Back
-      </Link>
     </div>
   );
 };

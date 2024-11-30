@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const MyCart = () => {
+  const navigate = useNavigate();
   const [cart, setCart] = useState([]);
 
   useEffect(() => {
@@ -17,6 +18,7 @@ const MyCart = () => {
 
   return (
     <div className="my-cart">
+      <button onClick={() => navigate(-1)}>Go Back</button>
       {cart.length === 0 ? (
         <p>Your cart is empty.</p>
       ) : (
@@ -35,9 +37,6 @@ const MyCart = () => {
           ))}
         </div>
       )}
-      <Link to="/" className="back-button">
-        Back
-      </Link>
     </div>
   );
 };
