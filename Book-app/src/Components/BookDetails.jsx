@@ -15,18 +15,17 @@ const BookDetails = () => {
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error}</p>;
-  if (!BookDetails || !BookDetails.volumeInfo) return;
+  if (!BookDetails || !BookDetails.volumeInfo)
+    return <p>No details available.</p>;
 
   const { title, authors, imageLinks, description, pageCount } =
     BookDetails.volumeInfo;
 
-  const price = BookDetails.saleInfo?.retailPrice?.amount;
+  const price = BookDetails.saleInfo?.retailPrice?.amount || "N/A";
 
   return (
     <div className="book-details">
-      <button onClick={() => navigate(-1)} className="go-back-btn">
-        Go Back
-      </button>
+      <button onClick={() => navigate(-1)}>Go Back</button>
       <h2>{title}</h2>
       {imageLinks?.thumbnail && (
         <img
@@ -35,9 +34,9 @@ const BookDetails = () => {
           style={{ width: "300px" }}
         />
       )}
-      <h3>Author: {authors?.join(", ")}</h3>
-      <p>{description}</p>
-      <p>Page Count: {pageCount}</p>
+      <h3>Author: {authors?.join(", ") || "Unknown"}</h3>
+      <p>{description || "No description available."}</p>
+      <p>Page Count: {pageCount || "Not available"}</p>
       <p>Price: ${price}</p>
     </div>
   );

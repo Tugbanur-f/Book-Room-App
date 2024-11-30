@@ -1,23 +1,79 @@
-/* src/App.css */
 body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fefefe;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
   background-image: url("src/img/book.img.jpg");
   background-size: cover;
 }
 
-/* Genel App Tasarımı */
-.home {
+.home h1 {
   font-family: "Arial", sans-serif;
   text-align: center;
-  margin: 0;
-  padding: 0;
-}
-
-h1 {
-  position: fixed;
-  color: blue;
-  font-size: 36px;
+  color: white;
+  text-decoration: underline;
+  font-size: 6rem;
   font-weight: bold;
   letter-spacing: 2px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  margin-bottom: 50px;
+}
+p {
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.book-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+.book-list::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 4px;
+}
+
+.book-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+  width: 450px;
+  height: 550px;
+}
+
+.book-card img {
+  width: 250px;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.book-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.book-card h3 {
+  font-size: 18px;
+  color: black;
+  margin-bottom: 10px;
 }
 
 button {
@@ -34,70 +90,16 @@ button {
 }
 
 button:hover {
-  background-color: #45a049;
+  background-color: blue;
 }
 
-.book-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 20px;
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease;
-  width: 350px;
-  height: 450px;
-}
-
-.book-card img {
-  width: 250px;
-  height: 350px;
-  object-fit: cover;
-  border-radius: 5px;
-}
-
-.book-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-.book-card .book-details {
-  text-align: center;
-  padding: 10px 0;
-}
-
-.book-card h3 {
-  font-size: 18px;
-  color: black;
-  margin-bottom: 10px;
-}
-
-.book-card .view-details-btn {
-  display: inline-block;
-  margin-top: 10px;
-  background-color: #4caf50;
-  padding: 8px 16px;
-  color: black;
-  font-size: 14px;
-  border-radius: 5px;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-}
-
-.book-card .view-details-btn :hover {
-  background-color: #45a049;
-}
-
-/* Navbar Tasarımı */
 .navbar {
   padding: 10px 20px;
-  position: fixed; /* Fixed position */
-  top: 0; /* Position it at the top */
-  left: 0; /* Align it to the left */
-  width: 100%; /* Full width */
-  z-index: 1000; /* Ensure it stays above other content */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
 }
 
 .navbar ul {
@@ -123,39 +125,19 @@ button:hover {
 
 .navbar a:hover {
   text-decoration: underline;
-  color: #4caf50;
-}
-
-.book-list::-webkit-scrollbar {
-  width: 8px;
-}
-
-.book-list::-webkit-scrollbar-thumb {
-  background-color: #888;
-  border-radius: 4px;
-}
-
-.book-list::-webkit-scrollbar-thumb:hover {
-  background-color: #555;
-}
-
-.book-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-  gap: 40px;
-  margin: 20px 0;
-  width: 80%;
+  color: blue;
 }
 
 .book-search {
-  position: relative;
-  justify-content: center;
-  margin-bottom: 30px;
+  display: inline;
+  margin-right: 10px;
+  border-radius: 5px;
+  padding: 9rem;
 }
 
 .book-search input {
   padding: 10px;
-  font-size: 16px;
+  font-size: 18px;
   border: 2px solid #390eb0;
   border-radius: 5px;
   margin-right: 10px;
@@ -177,14 +159,58 @@ button:hover {
   background-color: #45a049;
 }
 
-.categories {
-  text-align: center;
-  margin-bottom: 30px;
-  position: relative;
-  top: 0;
+.my-favourites img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
 }
 
-.category-buttons button.active {
-  background-color: #007bff;
+.my-favourites p {
+  font-size: 3rem;
+  color: #333;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.my-cart p,
+h3 {
+  font-size: 2rem;
+  color: #333;
+  font-weight: bold;
+  margin-top: 10px;
+}
+.my-cart img {
+  width: 250px;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.back-button {
+  position: absolute;
+  top: 30px;
+  left: 10px;
+  padding: 12px 25px;
+  margin: 20px;
+  border: none;
+  background-color: #4caf50;
   color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+#favourite-icon {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  position: absolute;
+  top: 10px;
+  right: 10px;
 }
