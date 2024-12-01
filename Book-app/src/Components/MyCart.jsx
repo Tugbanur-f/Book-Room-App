@@ -35,7 +35,7 @@ const MyCart = () => {
         <h4>Total: ${calculateTotalPrice()}</h4>
       </div>
       {cart.length === 0 ? (
-        <p>Your cart is empty.</p>
+        <h5>Your cart is empty.</h5>
       ) : (
         <div className="cart-items">
           {cart.map((book) => {

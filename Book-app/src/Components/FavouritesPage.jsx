@@ -19,7 +19,7 @@ const MyFavourites = () => {
       </button>
 
       {favourites.length === 0 ? (
-        <p>Your favourite is empty.</p>
+        <h5>Your favourite is empty.</h5>
       ) : (
         <div className="favourites-items">
           {favourites.map((book) => (
