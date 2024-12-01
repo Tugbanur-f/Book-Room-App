@@ -1,21 +1,18 @@
-import { useState } from "react";
-
 const AddToCart = ({ book }) => {
-  const [cart, setCart] = useState(() => {
-    const savedCart = localStorage.getItem("cart");
-    return savedCart ? JSON.parse(savedCart) : [];
-  });
-
   const addToCart = () => {
-    const updatedCart = [...cart, book];
-    setCart(updatedCart);
-    localStorage.setItem("cart", JSON.stringify(updatedCart));
+    const savedCart = localStorage.getItem("cart");
+    const cart = savedCart ? JSON.parse(savedCart) : [];
 
     const isBookInCart = cart.some((item) => item.id === book.id);
     if (isBookInCart) {
       alert("This book is already in the cart!");
       return;
     }
+
+    const updatedCart = [...cart, book];
+    localStorage.setItem("cart", JSON.stringify(updatedCart));
+
+    alert(`${book.volumeInfo.title} has been added to your cart!`);
   };
 
   return <button onClick={addToCart}>Add to Cart</button>;

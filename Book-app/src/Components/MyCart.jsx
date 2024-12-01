@@ -13,6 +13,7 @@ const MyCart = () => {
   const removeFromCart = (bookId) => {
     const updatedCart = cart.filter((book) => book.id !== bookId);
     setCart(updatedCart);
+
     localStorage.setItem("cart", JSON.stringify(updatedCart));
   };
 
@@ -23,8 +24,8 @@ const MyCart = () => {
         <p>Your cart is empty.</p>
       ) : (
         <div className="cart-items">
-          {cart.map((book, index) => (
-            <div key={index} className="cart-item">
+          {cart.map((book) => (
+            <div key={book.id} className="cart-item">
               <h3>{book.volumeInfo.title}</h3>
               <img
                 src={book.volumeInfo.imageLinks?.thumbnail}
