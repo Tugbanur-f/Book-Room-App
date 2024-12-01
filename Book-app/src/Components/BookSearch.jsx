@@ -8,6 +8,10 @@ import { AddToFavourites } from "./FavouriteContext";
 const BookSearch = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [url, setUrl] = useState("");
+  const [favourites, setFavourites] = useState(() => {
+    const savedFavourites = localStorage.getItem("favourites");
+    return savedFavourites ? JSON.parse(savedFavourites) : [];
+  });
 
   const { data, loading, error } = useFetch(url);
 
@@ -60,7 +64,11 @@ const BookSearch = () => {
                   <p>Price: {price}</p>
                 </Link>
                 <AddToCart book={book} />
-                <AddToFavourites book={book} />
+                <AddToFavourites
+                  book={book}
+                  favourites={favourites}
+                  setFavourites={setFavourites}
+                />
               </div>
             );
           })}

@@ -11,7 +11,7 @@ const Navbar = () => {
           <Link to="/favourites">My Favourites</Link>
         </li>
         <li>
-          <Link to="/my-cart">My Cart</Link>
+          <Link to="/my-cart">Shopping Cart</Link>
         </li>
       </ul>
     </nav>

@@ -1,25 +1,18 @@
-import { useState, useEffect } from "react";
 import heartSolid from "../assets/heart-solid.svg";
 import heartRegular from "../assets/heart-regular.svg";
 
-export const AddToFavourites = ({ book }) => {
-  const [favourites, setFavourites] = useState(() => {
-    const savedFavourites = localStorage.getItem("favourites");
-    return savedFavourites ? JSON.parse(savedFavourites) : [];
-  });
-
-  useEffect(() => {
-    localStorage.setItem("favourites", JSON.stringify(favourites));
-  }, [favourites]);
-
+export const AddToFavourites = ({ book, favourites, setFavourites }) => {
   const handleFavourite = () => {
     const isBookInFavourites = favourites.some((fav) => fav.id === book.id);
 
     if (isBookInFavourites) {
       const updatedFavourites = favourites.filter((fav) => fav.id !== book.id);
       setFavourites(updatedFavourites);
+      localStorage.setItem("favourites", JSON.stringify(updatedFavourites));
     } else {
-      setFavourites((prevFavourites) => [...prevFavourites, book]);
+      const updatedFavourites = [...favourites, book];
+      setFavourites(updatedFavourites);
+      localStorage.setItem("favourites", JSON.stringify(updatedFavourites));
     }
   };
 
