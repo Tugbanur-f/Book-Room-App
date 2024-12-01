@@ -28,7 +28,9 @@ const MyCart = () => {
 
   return (
     <div className="my-cart">
-      <button onClick={() => navigate(-1)}>Go Back</button>
+      <button onClick={() => navigate(-1)} className="go-back-btn">
+        Go Back
+      </button>
       <div className="total-price">
         <h4>Total: ${calculateTotalPrice()}</h4>
       </div>

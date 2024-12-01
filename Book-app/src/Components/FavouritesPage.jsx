@@ -14,7 +14,9 @@ const MyFavourites = () => {
 
   return (
     <div className="my-favourites">
-      <button onClick={() => navigate(-1)}>Go Back</button>
+      <button onClick={() => navigate(-1)} className="go-back-btn">
+        Go Back
+      </button>
 
       {favourites.length === 0 ? (
         <p>Your favourite is empty.</p>

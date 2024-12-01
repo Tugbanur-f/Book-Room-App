@@ -100,6 +100,17 @@ button:hover {
   background-color: blue;
 }
 
+.go-back-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  padding: 10px;
+  background-color: #4caf50;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
 .navbar {
   padding: 10px 20px;
   position: fixed;
