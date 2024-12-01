@@ -15,8 +15,7 @@ const BookDetails = () => {
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error}</p>;
-  if (!BookDetails || !BookDetails.volumeInfo)
-    return <p>No details available.</p>;
+  if (!BookDetails || !BookDetails.volumeInfo) return null;
 
   const { title, authors, imageLinks, description, pageCount } =
     BookDetails.volumeInfo;

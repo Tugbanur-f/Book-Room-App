@@ -47,7 +47,7 @@ const BookSearch = () => {
           data.items.map((book) => {
             const price = book.saleInfo?.retailPrice?.amount
               ? `$${book.saleInfo.retailPrice.amount}`
-              : "N/A";
+              : "Not for sale.";
 
             return (
               <div key={book.id} className="book-card">

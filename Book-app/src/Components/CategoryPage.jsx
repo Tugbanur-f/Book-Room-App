@@ -14,28 +14,34 @@ const CategoryPage = () => {
     <div className="category-page">
       <h1>{categoryName}</h1>
 
-      {loading && <p>Loading books...</p>}
+      {loading && <p>Loading...</p>}
       {error && <p>Error: {error}</p>}
 
       <div className="book-list">
         {data &&
           data.items &&
-          data.items.map((book) => (
-            <div key={book.id} className="book-card">
-              <Link to={`/book/${book.id}`} className="book-link">
-                <h3>{book.volumeInfo.title}</h3>
-                <img
-                  src={book.volumeInfo.imageLinks?.thumbnail}
-                  alt={book.volumeInfo.title}
-                />
-              </Link>
-              <AddToCart book={book} />
-              <AddToFavourites book={book} />
-            </div>
-          ))}
+          data.items.map((book) => {
+            const price = book.saleInfo?.retailPrice?.amount
+              ? `$${book.saleInfo.retailPrice.amount}`
+              : "Not for sale.";
+
+            return (
+              <div key={book.id} className="book-card">
+                <Link to={`/book/${book.id}`} className="book-link">
+                  <h3>{book.volumeInfo.title}</h3>
+                  <img
+                    src={book.volumeInfo.imageLinks?.thumbnail}
+                    alt={book.volumeInfo.title}
+                  />
+                  <p>Price: {price}</p>
+                </Link>
+                <AddToCart book={book} />
+                <AddToFavourites book={book} />
+              </div>
+            );
+          })}
       </div>
     </div>
   );
 };
-
 export default CategoryPage;
