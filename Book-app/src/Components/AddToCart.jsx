@@ -11,8 +11,6 @@ const AddToCart = ({ book }) => {
 
     const updatedCart = [...cart, book];
     localStorage.setItem("cart", JSON.stringify(updatedCart));
-
-    alert(`${book.volumeInfo.title} has been added to your cart!`);
   };
 
   return <button onClick={addToCart}>Add to Cart</button>;

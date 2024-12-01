@@ -272,9 +272,9 @@ button:hover {
   height: 550px;
 }
 .my-cart p {
-  font-size: 1rem;
+  font-size: 1.2rem;
   padding: 10px;
-  color: #333;
+  color: black;
   font-weight: bold;
   margin-top: 10px;
 }
