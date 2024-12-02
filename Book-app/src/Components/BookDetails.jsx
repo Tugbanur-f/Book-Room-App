@@ -1,6 +1,7 @@
 import { useParams, useNavigate } from "react-router-dom";
 import useFetch from "../Hooks/useFetch";
 import { API_KEY } from "../config";
+import { getBookDetails } from "../Helpers";
 
 const BookDetails = () => {
   const { id } = useParams();
@@ -17,25 +18,17 @@ const BookDetails = () => {
   if (error) return <p>Error: {error}</p>;
   if (!BookDetails || !BookDetails.volumeInfo) return null;
 
-  const { title, authors, imageLinks, description, pageCount } =
-    BookDetails.volumeInfo;
-
-  const price = BookDetails.saleInfo?.retailPrice?.amount || "N/A";
+  const { title, price, authors, image, description, pageCount } =
+    getBookDetails(BookDetails);
 
   return (
     <div className="book-details">
       <button onClick={() => navigate(-1)}>Go Back</button>
       <h2>{title}</h2>
-      {imageLinks?.thumbnail && (
-        <img
-          src={imageLinks.thumbnail}
-          alt={title}
-          style={{ width: "300px" }}
-        />
-      )}
-      <h3>Author: {authors?.join(", ") || "Unknown"}</h3>
-      <p>{description || "No description available."}</p>
-      <p>Page Count: {pageCount || "Not available"}</p>
+      {image && <img src={image} alt={title} style={{ width: "300px" }} />}
+      <h3>Author: {authors}</h3>
+      <p>{description}</p>
+      <p>Page Count: {pageCount}</p>
       <p>Price: ${price}</p>
     </div>
   );

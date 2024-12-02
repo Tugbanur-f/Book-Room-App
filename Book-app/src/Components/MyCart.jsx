@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { calculateTotalPrice, getBookDetails } from "../Helpers";
 
 const MyCart = () => {
   const navigate = useNavigate();
@@ -17,41 +18,26 @@ const MyCart = () => {
     localStorage.setItem("cart", JSON.stringify(updatedCart));
   };
 
-  const calculateTotalPrice = () => {
-    const total = cart.reduce((sum, book) => {
-      const price = book.saleInfo?.retailPrice?.amount || 0;
-      return sum + price;
-    }, 0);
-
-    return total.toFixed(2);
-  };
-
   return (
     <div className="my-cart">
       <button onClick={() => navigate(-1)} className="go-back-btn">
         Go Back
       </button>
       <div className="total-price">
-        <h4>Total: ${calculateTotalPrice()}</h4>
+        <h4>Total: ${calculateTotalPrice(cart)}</h4>
       </div>
       {cart.length === 0 ? (
         <h5>Your cart is empty.</h5>
       ) : (
         <div className="cart-items">
           {cart.map((book) => {
-            const price = book.saleInfo?.retailPrice?.amount
-              ? `$${book.saleInfo.retailPrice.amount}`
-              : `Not for sale.`;
+            const { title, price, authors, image } = getBookDetails(book); // Helper'dan değerleri al
 
             return (
               <div key={book.id} className="cart-item">
                 <h3>{book.volumeInfo.title}</h3>
-                <img
-                  src={book.volumeInfo.imageLinks?.thumbnail}
-                  alt={book.volumeInfo.title}
-                  className="book-image"
-                />
-                <p>{book.volumeInfo.authors?.join(", ")}</p>
+                <img src={image} alt={title} className="book-image" />
+                <p>{authors}</p>
                 <p>Price: {price}</p>
                 <button onClick={() => removeFromCart(book.id)}>Remove</button>
               </div>

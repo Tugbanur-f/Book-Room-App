@@ -4,6 +4,7 @@ import useFetch from "../Hooks/useFetch";
 import { API_KEY } from "../config";
 import AddToCart from "./AddToCart";
 import { AddToFavourites } from "./FavouriteContext";
+import { getBookDetails } from "../Helpers";
 
 const BookSearch = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -49,18 +50,13 @@ const BookSearch = () => {
         {data &&
           data.items &&
           data.items.map((book) => {
-            const price = book.saleInfo?.retailPrice?.amount
-              ? `$${book.saleInfo.retailPrice.amount}`
-              : "Not for sale.";
+            const { title, price, image } = getBookDetails(book); // Helper'dan değerleri al
 
             return (
               <div key={book.id} className="book-card">
                 <Link to={`/book/${book.id}`} className="book-link">
-                  <h3>{book.volumeInfo.title}</h3>
-                  <img
-                    src={book.volumeInfo.imageLinks?.thumbnail}
-                    alt={book.volumeInfo.title}
-                  />
+                  <h3>{title}</h3>
+                  <img src={image} alt={title} />
                   <p>Price: {price}</p>
                 </Link>
                 <AddToCart book={book} />

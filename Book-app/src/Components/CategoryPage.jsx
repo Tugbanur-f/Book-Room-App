@@ -5,16 +5,14 @@ import AddToCart from "./AddToCart";
 import { AddToFavourites } from "./FavouriteContext";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { getInitialFavourites, getBookDetails } from "../Helpers";
 
 const CategoryPage = () => {
   const { categoryName } = useParams();
   const url = `https://www.googleapis.com/books/v1/volumes?q=subject:${categoryName}&key=${API_KEY}`;
   const { data, loading, error } = useFetch(url);
 
-  const [favourites, setFavourites] = useState(() => {
-    const savedFavourites = localStorage.getItem("favourites");
-    return savedFavourites ? JSON.parse(savedFavourites) : [];
-  });
+  const [favourites, setFavourites] = useState(getInitialFavourites);
 
   return (
     <div className="category-page">
@@ -27,18 +25,13 @@ const CategoryPage = () => {
         {data &&
           data.items &&
           data.items.map((book) => {
-            const price = book.saleInfo?.retailPrice?.amount
-              ? `$${book.saleInfo.retailPrice.amount}`
-              : "Not for sale.";
+            const { title, price, image } = getBookDetails(book); // Helper'dan değerleri al
 
             return (
               <div key={book.id} className="book-card">
                 <Link to={`/book/${book.id}`} className="book-link">
-                  <h3>{book.volumeInfo.title}</h3>
-                  <img
-                    src={book.volumeInfo.imageLinks?.thumbnail}
-                    alt={book.volumeInfo.title}
-                  />
+                  <h3>{title}</h3>
+                  <img src={image} alt={title} />
                   <p>Price: {price}</p>
                 </Link>
                 <AddToCart book={book} />
