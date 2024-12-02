@@ -33,7 +33,7 @@ const MyCart = () => {
                 <h3>{book.volumeInfo.title}</h3>
                 <img src={image} alt={title} className="book-image" />
                 <p>{authors}</p>
-                <p>Price: {price}</p>
+                <p>Price: ${price}</p>
                 <button onClick={() => removeFromCart(book.id)}>Remove</button>
               </div>
             );

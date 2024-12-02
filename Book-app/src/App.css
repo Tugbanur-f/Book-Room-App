@@ -6,12 +6,14 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  height: 100%;
   background-image: url("/img/book.img.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   color: black;
+  overflow-x: hidden;
 }
 
 .home h1 {

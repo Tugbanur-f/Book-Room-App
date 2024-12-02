@@ -1,6 +1,6 @@
 export const getBookDetails = (book) => {
   const title = book?.volumeInfo?.title || "Title not available";
-  const price = book?.saleInfo?.retailPrice?.amount || "$20";
+  const price = book?.saleInfo?.retailPrice?.amount || "20";
   const authors =
     book?.volumeInfo?.authors?.join(", ") || "Author(s) not available";
   const image = book?.volumeInfo?.imageLinks?.thumbnail || "No image available";

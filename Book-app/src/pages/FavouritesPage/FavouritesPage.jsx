@@ -25,7 +25,7 @@ const MyFavourites = () => {
                 <h3>{title}</h3>
                 <img src={image} alt={title} />
                 <p>{authors}</p>
-                <p>Price: {price}</p>
+                <p>Price: ${price}</p>
                 <RemoveFromFavourites
                   bookId={book.id}
                   setFavourites={setFavourites}

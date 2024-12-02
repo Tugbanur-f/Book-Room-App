@@ -57,7 +57,7 @@ const BookSearch = () => {
                 <Link to={`/book/${book.id}`} className="book-link">
                   <h3>{title}</h3>
                   <img src={image} alt={title} />
-                  <p>Price: {price}</p>
+                  <p>Price: ${price}</p>
                 </Link>
                 <AddToCart book={book} />
                 <AddToFavourites
