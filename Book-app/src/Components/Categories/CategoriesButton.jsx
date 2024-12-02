@@ -1,7 +1,5 @@
 import { useState, useEffect } from "react";
-
-import { API_KEY } from "../config";
-
+import { API_KEY } from "../../config";
 import { useNavigate } from "react-router-dom";
 
 const Categories = () => {

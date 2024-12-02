@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
-import { calculateTotalPrice, getBookDetails } from "../Helpers";
-import useLocalStorage from "../Hooks/useLocalStorage";
+import { calculateTotalPrice, getBookDetails } from "../../Helpers/Helpers";
+import useLocalStorage from "../../Hooks/useLocalStorage";
 
 const MyCart = () => {
   const navigate = useNavigate();

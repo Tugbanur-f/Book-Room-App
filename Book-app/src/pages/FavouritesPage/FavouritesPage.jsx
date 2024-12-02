@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
-import { RemoveFromFavourites } from "./FavouriteButtons";
-import { getBookDetails } from "../Helpers";
-import useLocalStorage from "../Hooks/useLocalStorage";
+import { RemoveFromFavourites } from "../../Components/FavouriteButtons";
+import { getBookDetails } from "../../Helpers/Helpers";
+import useLocalStorage from "../../Hooks/useLocalStorage";
 
 const MyFavourites = () => {
   const navigate = useNavigate();

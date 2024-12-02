@@ -1,11 +1,17 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import HomePage from "./Components/HomePage";
-import BookDetails from "./Components/BookDetails";
-import MyCart from "./Components/MyCart";
+import HomePage from "./pages/HomePage/HomePage";
+import BookDetails from "./Components/Shared/BookDetails";
+import MyCart from "./pages/MyCart/MyCart";
+import Navbar from "./Components/Navbar/Navbar";
+import MyFavourites from "./pages/FavouritesPage/FavouritesPage";
+import CategoryPage from "./Components/Categories/CategoryPage";
 import "./App.css";
-import Navbar from "./Components/Navbar";
-import MyFavourites from "./Components/FavouritesPage";
-import CategoryPage from "./Components/CategoryPage";
+import "./pages/FavouritesPage/Fav.css";
+import "./pages/MyCart/Cart.css";
+import "./pages/HomePage/HomePage.css";
+import "./Components/Navbar/Navbar.css";
+import "./Components/Shared/Book.css";
+import "./Components/Categories/Categories.css";
 
 function App() {
   return (

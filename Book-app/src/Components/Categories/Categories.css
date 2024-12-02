@@ -1,0 +1,41 @@
+.categories-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 20px;
+  padding-top: 5px;
+  margin: 0;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.categories-button:hover {
+  color: #0056b3;
+}
+
+.dropdown-button:hover {
+  background-color: #0056b3;
+}
+
+.dropdown-menu {
+  margin-bottom: 20px;
+  color: white;
+  padding: 10px;
+  position: absolute;
+}
+
+.dropdown-item {
+  display: block;
+  padding: 8px 12px;
+  border: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+}
+
+.dropdown-item.active {
+  background-color: #007bff;
+  color: white;
+}

@@ -1,5 +1,5 @@
-import BookSearch from "./BookSearch";
-import Categories from "./Categories";
+import BookSearch from "../../Components/Shared/BookSearch";
+import Categories from "../../Components/Categories/CategoriesButton";
 
 const HomePage = () => {
   return (

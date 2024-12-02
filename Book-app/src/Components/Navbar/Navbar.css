@@ -1,0 +1,34 @@
+.navbar {
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+}
+
+.navbar li {
+  display: inline;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+  color: blue;
+}

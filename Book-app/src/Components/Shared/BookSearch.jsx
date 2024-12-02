@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import useFetch from "../Hooks/useFetch";
-import { API_KEY } from "../config";
-import AddToCart from "./AddToCart";
-import { AddToFavourites } from "./FavouriteButtons";
-import { getBookDetails } from "../Helpers";
+import useFetch from "../../Hooks/useFetch";
+import { API_KEY } from "../../config";
+import AddToCart from "../AddToCart";
+import { AddToFavourites } from "../FavouriteButtons";
+import { getBookDetails } from "../../Helpers/Helpers";
 
 const BookSearch = () => {
   const [searchTerm, setSearchTerm] = useState("");

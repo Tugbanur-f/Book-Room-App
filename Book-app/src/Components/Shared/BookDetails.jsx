@@ -1,7 +1,7 @@
 import { useParams, useNavigate } from "react-router-dom";
-import useFetch from "../Hooks/useFetch";
-import { API_KEY } from "../config";
-import { getBookDetails } from "../Helpers";
+import useFetch from "../../Hooks/useFetch";
+import { API_KEY } from "../../config";
+import { getBookDetails } from "../../Helpers/Helpers";
 
 const BookDetails = () => {
   const { id } = useParams();
