@@ -13,6 +13,10 @@ const MyCart = () => {
     localStorage.setItem("cart", JSON.stringify(updatedCart));
   };
 
+  const handleCheckout = () => {
+    navigate("/checkout", { state: { total: calculateTotalPrice(cart) } });
+  };
+
   return (
     <div className="my-cart">
       <button onClick={() => navigate(-1)} className="go-back-btn">
@@ -39,6 +43,11 @@ const MyCart = () => {
             );
           })}
         </div>
+      )}
+      {cart.length > 0 && (
+        <button onClick={handleCheckout} className="checkout-btn">
+          Proceed to Checkout
+        </button>
       )}
     </div>
   );

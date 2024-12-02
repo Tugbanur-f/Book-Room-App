@@ -1,0 +1,37 @@
+.checkout-page {
+  text-align: center;
+  margin: 20px;
+}
+
+.checkout-page h1 {
+  font-size: 4rem;
+  color: black;
+}
+
+.checkout-page h3 {
+  font-size: 1.5rem;
+  color: black;
+  background-color: rgba(240, 248, 255, 0.94);
+  border-radius: 5px;
+  padding: 5px;
+  margin: 5px;
+}
+
+.checkout-page p {
+  font-size: 1.2rem;
+  color: black;
+  margin-bottom: 10px;
+}
+
+.checkout-page button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.checkout-page button:hover {
+  background-color: #014d9f;
+}

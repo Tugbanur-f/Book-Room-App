@@ -12,6 +12,8 @@ import "./pages/HomePage/HomePage.css";
 import "./Components/Navbar/Navbar.css";
 import "./Components/Shared/Book.css";
 import "./Components/Categories/Categories.css";
+import "./pages/CheckoutPage/Checkout.css";
+import CheckoutPage from "./pages/CheckoutPage/CheckoutPage";
 
 function App() {
   return (
@@ -23,6 +25,7 @@ function App() {
         <Route path="/categories/:categoryName" element={<CategoryPage />} />
         <Route path="/favourites" element={<MyFavourites />} />
         <Route path="/my-cart" element={<MyCart />} />
+        <Route path="/checkout" element={<CheckoutPage />} />
       </Routes>
     </Router>
   );
