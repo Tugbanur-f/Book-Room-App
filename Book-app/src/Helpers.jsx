@@ -1,6 +1,6 @@
 export const getBookDetails = (book) => {
   const title = book?.volumeInfo?.title || "Title not available";
-  const price = book?.saleInfo?.retailPrice?.amount || "Price not available";
+  const price = book?.saleInfo?.retailPrice?.amount || "$20";
   const authors =
     book?.volumeInfo?.authors?.join(", ") || "Author(s) not available";
   const image = book?.volumeInfo?.imageLinks?.thumbnail || "No image available";
@@ -26,7 +26,7 @@ export const getInitialFavourites = () => {
 export const calculateTotalPrice = (cart) => {
   return cart
     .reduce((sum, book) => {
-      const price = book.saleInfo?.retailPrice?.amount || 0;
+      const price = book.saleInfo?.retailPrice?.amount || 20;
       return sum + price;
     }, 0)
     .toFixed(2);

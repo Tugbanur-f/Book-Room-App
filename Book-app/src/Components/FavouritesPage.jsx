@@ -1,17 +1,11 @@
-import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { RemoveFromFavourites } from "./FavouriteContext";
+import { RemoveFromFavourites } from "./FavouriteButtons";
 import { getBookDetails } from "../Helpers";
+import useLocalStorage from "../Hooks/useLocalStorage";
 
 const MyFavourites = () => {
   const navigate = useNavigate();
-  const [favourites, setFavourites] = useState([]);
-
-  useEffect(() => {
-    const storedFavourites =
-      JSON.parse(localStorage.getItem("favourites")) || [];
-    setFavourites(storedFavourites);
-  }, []);
+  const [favourites, setFavourites] = useLocalStorage("favourites", []);
 
   return (
     <div className="my-favourites">
@@ -24,7 +18,7 @@ const MyFavourites = () => {
       ) : (
         <div className="favourites-items">
           {favourites.map((book) => {
-            const { title, price, authors, image } = getBookDetails(book); // Helper'dan değerleri al
+            const { title, price, authors, image } = getBookDetails(book);
 
             return (
               <div key={book.id} className="favourites-item">

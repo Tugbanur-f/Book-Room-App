@@ -1,15 +1,10 @@
-import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { calculateTotalPrice, getBookDetails } from "../Helpers";
+import useLocalStorage from "../Hooks/useLocalStorage";
 
 const MyCart = () => {
   const navigate = useNavigate();
-  const [cart, setCart] = useState([]);
-
-  useEffect(() => {
-    const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
-    setCart(storedCart);
-  }, []);
+  const [cart, setCart] = useLocalStorage("cart", []);
 
   const removeFromCart = (bookId) => {
     const updatedCart = cart.filter((book) => book.id !== bookId);
@@ -31,7 +26,7 @@ const MyCart = () => {
       ) : (
         <div className="cart-items">
           {cart.map((book) => {
-            const { title, price, authors, image } = getBookDetails(book); // Helper'dan değerleri al
+            const { title, price, authors, image } = getBookDetails(book);
 
             return (
               <div key={book.id} className="cart-item">

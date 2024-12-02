@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import useFetch from "../Hooks/useFetch";
 import { API_KEY } from "../config";
 import AddToCart from "./AddToCart";
-import { AddToFavourites } from "./FavouriteContext";
+import { AddToFavourites } from "./FavouriteButtons";
 import { getBookDetails } from "../Helpers";
 
 const BookSearch = () => {
@@ -50,7 +50,7 @@ const BookSearch = () => {
         {data &&
           data.items &&
           data.items.map((book) => {
-            const { title, price, image } = getBookDetails(book); // Helper'dan değerleri al
+            const { title, price, image } = getBookDetails(book);
 
             return (
               <div key={book.id} className="book-card">
