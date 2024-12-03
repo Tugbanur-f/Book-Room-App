@@ -59,6 +59,16 @@ h5 {
   border-radius: 9px;
   padding: 6px;
 }
+.go-back-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  padding: 10px;
+  background-color: #4caf50;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
 
 @media screen and (max-width: 768px) {
   .favourites-items {
@@ -83,6 +93,11 @@ h5 {
   #favourite-icon {
     width: 1.6rem;
     height: 1.6rem;
+  }
+  .my-favourites .go-back-btn {
+    top: 80px;
+    left: 15px;
+    padding: 8px;
   }
 }
 
@@ -109,5 +124,10 @@ h5 {
   #favourite-icon {
     width: 1.4rem;
     height: 1.4rem;
+  }
+  .my-favourites .go-back-btn {
+    top: 80px;
+    left: 15px;
+    padding: 8px;
   }
 }
