@@ -6,6 +6,9 @@
   margin-top: 50px;
   font-size: 1rem;
 }
+.my-cart {
+  padding-left: 1rem;
+}
 
 .cart-item {
   display: flex;
@@ -72,6 +75,12 @@ h5 {
   .cart-items {
     grid-template-columns: repeat(1, 1fr);
   }
+  .my-cart {
+    margin-right: 2rem;
+    padding-left: 0;
+    margin-bottom: 5rem;
+    margin-top: 10rem;
+  }
 
   .cart-item {
     width: 100%;
@@ -103,6 +112,12 @@ h5 {
 @media screen and (max-width: 480px) {
   .cart-items {
     grid-template-columns: 1fr;
+  }
+  .my-cart {
+    margin-right: 2rem;
+    padding-left: 0;
+    margin-bottom: 5rem;
+    margin-top: 10rem;
   }
 
   .cart-item {

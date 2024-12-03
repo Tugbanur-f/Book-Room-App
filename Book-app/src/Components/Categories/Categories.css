@@ -18,10 +18,23 @@
 .category-page h1 {
   font-size: 3rem;
   margin: 0;
-  padding-left: 5rem;
-  word-wrap: break-word;
+  padding-left: 1rem;
 }
 
+.book-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+  width: 350px;
+  height: 450px;
+  position: relative;
+}
 .categories-button:hover {
   color: #0056b3;
 }
@@ -63,12 +76,18 @@
 
 @media screen and (max-width: 768px) {
   .categories-button {
-    top: 15px;
-    right: 15px;
-    padding: 15px;
+    position: fixed;
+    left: 40%;
+    transform: translateX(-50%);
+    top: auto;
+    bottom: 0;
   }
 
   .dropdown-menu {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
     padding: 8px;
     width: 100%;
     background-color: rgba(1, 17, 1, 0.638);
@@ -79,9 +98,22 @@
   .dropdown-item {
     padding: 8px;
     font-size: 14px;
+    cursor: pointer;
   }
   .category-page h1 {
-    padding: 2rem;
+    padding: 6rem;
+  }
+  .book-card {
+    width: 280px;
+    height: auto;
+    padding: 10px;
+    margin-left: 10px;
+  }
+
+  .book-card img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
   }
 }
 
@@ -89,18 +121,43 @@
   .categories-button {
     top: 10px;
     right: 10px;
-    padding: 10px;
   }
 
   .dropdown-menu {
     padding: 5px;
+    bottom: 40px;
   }
 
   .dropdown-item {
     padding: 8px;
     font-size: 12px;
   }
+  .category-page {
+    margin-top: 3rem;
+    padding: 1rem;
+    margin-right: 1rem;
+  }
   .category-page h1 {
     padding: 2rem;
+  }
+
+  .book-card {
+    width: 100%;
+    padding: 8px;
+  }
+
+  .book-card img {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .book-card h3 {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  .book-card p {
+    font-size: 0.9rem;
+    text-align: center;
   }
 }

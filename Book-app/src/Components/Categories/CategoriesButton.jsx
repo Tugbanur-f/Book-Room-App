@@ -11,9 +11,6 @@ const Categories = () => {
     "Adventure",
     "Psychology",
     "Education",
-    "Technology",
-    "Biography",
-    "Religion",
     "Romance",
   ]);
 

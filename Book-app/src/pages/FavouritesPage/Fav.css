@@ -63,6 +63,8 @@ h5 {
 @media screen and (max-width: 768px) {
   .favourites-items {
     grid-template-columns: 1fr;
+    margin-right: 2rem;
+    margin-top: 10rem;
   }
 
   .favourites-item {
@@ -87,6 +89,8 @@ h5 {
 @media screen and (max-width: 480px) {
   .favourites-items {
     grid-template-columns: 1fr;
+    margin-right: 2rem;
+    margin-top: 10rem;
   }
 
   .favourites-item {
