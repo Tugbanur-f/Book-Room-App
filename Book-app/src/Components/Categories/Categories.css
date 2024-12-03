@@ -119,8 +119,11 @@
 
 @media screen and (max-width: 480px) {
   .categories-button {
-    top: 10px;
-    right: 10px;
+    position: fixed;
+    left: 40%;
+    transform: translateX(-50%);
+    top: auto;
+    bottom: 0;
   }
 
   .dropdown-menu {
