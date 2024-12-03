@@ -10,7 +10,7 @@ const CheckoutPage = () => {
       <h3>Total Price: ${total}</h3>
       <p>Please create an account to proceed with the payment.</p>
       <button onClick={() => alert("Create an account!")}>
-        Create an Account!
+        Create an Account
       </button>
     </div>
   );
