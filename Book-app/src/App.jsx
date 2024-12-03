@@ -5,6 +5,7 @@ import MyCart from "./pages/MyCart/MyCart";
 import Navbar from "./Components/Navbar/Navbar";
 import MyFavourites from "./pages/FavouritesPage/FavouritesPage";
 import CategoryPage from "./Components/Categories/CategoryPage";
+import CheckoutPage from "./pages/CheckoutPage/CheckoutPage";
 import "./App.css";
 import "./pages/FavouritesPage/Fav.css";
 import "./pages/MyCart/Cart.css";
@@ -13,7 +14,6 @@ import "./Components/Navbar/Navbar.css";
 import "./Components/Shared/Book.css";
 import "./Components/Categories/Categories.css";
 import "./pages/CheckoutPage/Checkout.css";
-import CheckoutPage from "./pages/CheckoutPage/CheckoutPage";
 
 function App() {
   return (

@@ -14,7 +14,7 @@ const BookDetails = () => {
     `https://www.googleapis.com/books/v1/volumes/${id}?key=${API_KEY}`,
   );
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <p id="loading">Loading...</p>;
   if (error) return <p>Error: {error}</p>;
   if (!BookDetails || !BookDetails.volumeInfo) return null;
 

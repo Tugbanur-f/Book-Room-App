@@ -43,7 +43,7 @@ const BookSearch = () => {
       />
       <button onClick={handleSearch}>Search</button>
 
-      {loading && <p>Loading...</p>}
+      {loading && <p id="loading">Loading...</p>}
       {error && <p>Error: {error}</p>}
 
       <div className="book-list">

@@ -56,3 +56,58 @@ button:hover {
   border-radius: 5px;
   cursor: pointer;
 }
+
+@media screen and (max-width: 768px) {
+  .book-search input {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  .book-search {
+    padding: 3rem;
+    display: block;
+  }
+
+  .book-search button {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  .go-back-btn {
+    top: 15px;
+    left: 15px;
+    padding: 8px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .book-search input {
+    font-size: 14px;
+    width: 100%;
+  }
+
+  .book-search button {
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+
+  .book-search {
+    padding: 2rem;
+  }
+
+  button {
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+
+  .go-back-btn {
+    top: 10px;
+    left: 10px;
+    padding: 6px;
+  }
+}

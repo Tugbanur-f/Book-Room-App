@@ -7,10 +7,13 @@ const Categories = () => {
     "Fiction",
     "Science",
     "History",
+    "Fantasy",
+    "Adventure",
     "Psychology",
     "Education",
     "Technology",
-    "Art",
+    "Biography",
+    "Religion",
     "Romance",
   ]);
 

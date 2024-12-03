@@ -18,7 +18,7 @@ const CategoryPage = () => {
     <div className="category-page">
       <h1>{categoryName}</h1>
 
-      {loading && <p>Loading...</p>}
+      {loading && <p id="loading">Loading...</p>}
       {error && <p>Error: {error}</p>}
 
       <div className="book-list">
