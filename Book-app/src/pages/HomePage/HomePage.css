@@ -46,17 +46,6 @@ button:hover {
   background-color: blue;
 }
 
-.go-back-btn {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  padding: 10px;
-  background-color: #4caf50;
-  color: white;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
 @media screen and (max-width: 768px) {
   .book-search input {
     width: 100%;
@@ -90,12 +79,6 @@ button:hover {
     padding: 10px 20px;
     font-size: 14px;
   }
-
-  .go-back-btn {
-    top: 15px;
-    left: 15px;
-    padding: 8px;
-  }
 }
 
 @media screen and (max-width: 480px) {
@@ -124,11 +107,5 @@ button:hover {
   button {
     padding: 8px 15px;
     font-size: 14px;
-  }
-
-  .go-back-btn {
-    top: 10px;
-    left: 10px;
-    padding: 6px;
   }
 }

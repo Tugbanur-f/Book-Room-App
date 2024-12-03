@@ -106,13 +106,13 @@ p {
   }
 
   .book-card {
-    width: 100%;
+    width: 80%;
     height: auto;
     padding: 10px;
   }
 
   .book-card img {
-    width: 100%;
+    width: 80%;
     height: auto;
   }
 
