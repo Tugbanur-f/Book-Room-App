@@ -1,6 +1,11 @@
 .checkout-page {
   text-align: center;
   margin: 20px;
+  background-color: rgba(255, 255, 255, 0.667);
+  border-radius: 10px;
+  padding: 20px;
+  width: 700px;
+  height: auto;
 }
 
 .checkout-page h1 {
@@ -9,12 +14,8 @@
 }
 
 .checkout-page h3 {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   color: black;
-  background-color: rgba(240, 248, 255, 0.94);
-  border-radius: 5px;
-  padding: 5px;
-  margin: 5px;
 }
 
 .checkout-page p {
