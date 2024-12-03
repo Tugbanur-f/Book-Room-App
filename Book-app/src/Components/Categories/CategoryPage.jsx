@@ -4,15 +4,15 @@ import { API_KEY } from "../../config";
 import AddToCart from "../AddToCart";
 import { AddToFavourites } from "../FavouriteButtons";
 import { Link } from "react-router-dom";
-import { useState } from "react";
-import { getInitialFavourites, getBookDetails } from "../../Helpers/Helpers";
+import { getBookDetails } from "../../Helpers/Helpers";
+import useLocalStorage from "../../Hooks/useLocalStorage";
 
 const CategoryPage = () => {
   const { categoryName } = useParams();
   const url = `https://www.googleapis.com/books/v1/volumes?q=subject:${categoryName}&key=${API_KEY}`;
   const { data, loading, error } = useFetch(url);
 
-  const [favourites, setFavourites] = useState(getInitialFavourites);
+  const [favourites, setFavourites] = useLocalStorage("favourites", []);
 
   return (
     <div className="category-page">

@@ -18,11 +18,6 @@ export const getBookDetails = (book) => {
   };
 };
 
-export const getInitialFavourites = () => {
-  const savedFavourites = localStorage.getItem("favourites");
-  return savedFavourites ? JSON.parse(savedFavourites) : [];
-};
-
 export const calculateTotalPrice = (cart) => {
   return cart
     .reduce((sum, book) => {

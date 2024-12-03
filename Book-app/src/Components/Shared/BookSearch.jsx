@@ -5,14 +5,12 @@ import { API_KEY } from "../../config";
 import AddToCart from "../AddToCart";
 import { AddToFavourites } from "../FavouriteButtons";
 import { getBookDetails } from "../../Helpers/Helpers";
+import useLocalStorage from "../../Hooks/useLocalStorage";
 
 const BookSearch = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [url, setUrl] = useState("");
-  const [favourites, setFavourites] = useState(() => {
-    const savedFavourites = localStorage.getItem("favourites");
-    return savedFavourites ? JSON.parse(savedFavourites) : [];
-  });
+  const [favourites, setFavourites] = useLocalStorage("favourites", []);
 
   const { data, loading, error } = useFetch(url);
 
